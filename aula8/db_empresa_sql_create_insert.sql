@@ -72,11 +72,11 @@ values
 
 -- 5) incluir as chaves estrangeiras na tabela funcionário
 ALTER TABLE funcionario 
-	ADD CONSTRAINT funcionario_supervisor_fk 
-		FOREIGN KEY (cpf_supervisor) REFERENCES funcionario(cpf);
+    ADD CONSTRAINT funcionario_supervisor_fk 
+        FOREIGN KEY (cpf_supervisor) REFERENCES funcionario(cpf);
 ALTER TABLE funcionario 
-	ADD CONSTRAINT funcionario_departamento_fk 
-		FOREIGN KEY (num_depto) REFERENCES departamento(num_depto);
+    ADD CONSTRAINT funcionario_departamento_fk 
+        FOREIGN KEY (num_depto) REFERENCES departamento(num_depto);
 
 -- 6) criar tabela localizações departamento
 create table localizacoes_departamento (
@@ -137,56 +137,56 @@ create table trabalha_em (
 -- 11) Popular tabela trabalha_em
 insert into trabalha_em
 values
-	-- Alan gerente departamento TI
-	('91263853941',10,16.5),
-	('91263853941',20,20.5),
-	('91263853941',30,9),
-	-- Diego Funcionario Depto TI
-	('97463853142',10,30.5),
-	('97463853142',20,36),
-	('97463853142',30,20),
-	-- Paulo gerente geral
-	('98765432112', 1, 4),
-	('98765432112', 2, 5),
-	('98765432112', 3, 4.5),
-	('98765432112', 10, 2.5),
-	('98765432112', 20, 1.5),
-	('98765432112', 30, 1),
-	-- Alessandro
-	('12345678912', 1, 15),
-	('12345678912', 2, 15.5),
-	('12345678912', 3, 14.5),
-	-- Fernando
-	('91875163905', 1, 17.5),
-	('91875163905', 2, 18.5),
-	('91875163905', 3, 19),
-	-- Felipe
-	('81457787946', 1, 17.5),
-	('81457787946', 2, 18),
-	('81457787946', 3, 22),
-	-- Arnaldo
-	('88070527927', 1, 14),
-	('88070527927', 2, 21),
-	('88070527927', 3, 26)
+    -- Alan gerente departamento TI
+    ('91263853941',10,16.5),
+    ('91263853941',20,20.5),
+    ('91263853941',30,9),
+    -- Diego Funcionario Depto TI
+    ('97463853142',10,30.5),
+    ('97463853142',20,36),
+    ('97463853142',30,20),
+    -- Paulo gerente geral
+    ('98765432112', 1, 4),
+    ('98765432112', 2, 5),
+    ('98765432112', 3, 4.5),
+    ('98765432112', 10, 2.5),
+    ('98765432112', 20, 1.5),
+    ('98765432112', 30, 1),
+    -- Alessandro
+    ('12345678912', 1, 15),
+    ('12345678912', 2, 15.5),
+    ('12345678912', 3, 14.5),
+    -- Fernando
+    ('91875163905', 1, 17.5),
+    ('91875163905', 2, 18.5),
+    ('91875163905', 3, 19),
+    -- Felipe
+    ('81457787946', 1, 17.5),
+    ('81457787946', 2, 18),
+    ('81457787946', 3, 22),
+    -- Arnaldo
+    ('88070527927', 1, 14),
+    ('88070527927', 2, 21),
+    ('88070527927', 3, 26)
 ;
 
 -- 12) Criar tabela dependente
 create table dependente (
-	cpf_funcionario char(11),
-	nome_dependente varchar(50) not null,
-	sexo char(1) not null,
-	dt_nascimento date not null,
-	-- F => filho, A => filha, E => esposa, M => marido
-	parentesco char(1) not null 
-		check (parentesco in ('F', 'A', 'E', 'M')), 
-	primary key (cpf_funcionario, nome_dependente),
-	foreign key (cpf_funcionario) references funcionario(cpf)
+    cpf_funcionario char(11),
+    nome_dependente varchar(50) not null,
+    sexo char(1) not null,
+    dt_nascimento date not null,
+    -- F => filho, A => filha, E => esposa, M => marido
+    parentesco char(1) not null 
+        check (parentesco in ('F', 'A', 'E', 'M')), 
+    primary key (cpf_funcionario, nome_dependente),
+    foreign key (cpf_funcionario) references funcionario(cpf)
 );
 
--- 13) Criar tabela dependente
+-- 13) Inserir dados tabela dependente
 insert into dependente
 values
-	('98765432112','Alicia', 'F', '2011-08-14','A'),
-	('98765432112','Tiago', 'M', '2009-11-22','F'),
-	('98765432112','Janaina', 'M', '1979-06-12','E')
+    ('98765432112','Alicia', 'F', '2011-08-14','A'),
+    ('98765432112','Tiago', 'M', '2009-11-22','F'),
+    ('98765432112','Janaina', 'M', '1979-06-12','E')
 ;
