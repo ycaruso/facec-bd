@@ -1,3 +1,4 @@
+
 drop table if exists funcionario cascade;
 drop table if exists departamento cascade;
 drop table if exists localizacoes_departamento cascade;
@@ -38,8 +39,8 @@ insert
 values 
     ('Paulo', 'A', 'Lima', '98765432112', '1971-12-31', 'Rua XIX de Novembro', 'M', 20000, null, 1,1),
     ('Alessandro', 'P', 'Souza', '12345678912', '1985-05-30', 'Rua Joaquim Barbosa', 'M', 2000, '98765432112', 1,1),
-    ('Fernando', 'B', 'Castro', '91875163905', '2000-06-06', 'Rua Sao Jorge', 'M', 1800, '98765432112', 1,1),
-    ('Felipe', 'C', 'Estevanato', '81457787946', '2002-08-14', 'Rua Santos Dumont (306)', 'M', 1800, '98765432112', 1,1),
+    ('Fernando', 'B', 'Castro', '91875163905', '2000-06-06', 'Rua Sao Jorge', 'M', 1750, '98765432112', 1,1),
+    ('Felipe', 'C', 'Estevanato', '81457787946', '2002-08-14', 'Rua Santos Dumont (306)', 'M', 1650, '98765432112', 1,1),
     ('Arnaldo', 'D', 'Silva', '88070527927', '1998-01-19', 'Rua Espirito Santo (298)', 'M', 1800, '98765432112', 1,1),
     ('Ana', 'E', 'Ferreira', '02735545903', '2006-02-24', 'Rua Primeiro de Maio', 'F', 9000, '98765432112', 2,1),
     ('Maria', 'F', 'Aparecida', '56510547902', '1996-11-06', 'Rua Santa Rita', 'F', 1500, '02735545903', 2,1),
@@ -68,12 +69,13 @@ values
 -- 4) Inserir os departamentos
 insert 
     into departamento (nome_departamento, num_depto, cpf_gerente, data_inicio_gerente)
-values 
+values
     ('Matriz', 1, '98765432112', '2003-04-20'),
     ('Administração', 3, '92386274950', '2007-06-30'),
     ('Financeiro', 2, '02735545903', '2008-05-16'),
     ('TI', 4, '91263853941', '2010-06-22'),
-    ('Comercial', 5, '12483285902', '2003-05-01')
+    ('Comercial', 5, '12483285902', '2003-05-01'),
+    ('Auditoria', 6, '98765432112', '2008-06-21')    
 ;
 
 -- 5) incluir as chaves estrangeiras na tabela funcionário
